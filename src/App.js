@@ -2,6 +2,7 @@ import "./App.css";
 import {
   BrowserRouter as Router,
   Route,
+  Redirect,
 } from "react-router-dom/cjs/react-router-dom";
 
 import Users from "./user/pages/Users";
@@ -9,9 +10,10 @@ import Users from "./user/pages/Users";
 function App() {
   return (
     <Router>
-      <Route path="/">
+      <Route path="/" exact>
         <Users />
       </Route>
+      <Redirect to="/" />
     </Router>
   );
 }
